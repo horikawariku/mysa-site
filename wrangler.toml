@@ -1,0 +1,8 @@
+name = "mysa-site"
+compatibility_date = "2025-06-01"
+
+# 静的サイト配信（Worker Static Assets）
+# ./ 以下の HTML / 画像 をそのまま配信する。index.html・/hakone/ などのディレクトリも自動で index を返す。
+[assets]
+directory = "./"
+not_found_handling = "404-page"
