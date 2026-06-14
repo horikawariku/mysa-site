@@ -249,7 +249,7 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var
     <div class="steps" id="steps"></div>
   </section>
 
-  <p class="note">※ 住所・最寄り・サウナ種別は実情報。写真は箱根=mysa hakone・富士=mysa fuji の公式写真、山中湖（mysa yamanakako）・THE TIME FUJI は暫定で箱根/富士の画像を使用（実写真は各公式から差し替え予定）。料金は1名あたりの目安（要確認）。全4施設ペット可。空室カレンダーはデモ。地図 © OpenStreetMap / CARTO。</p>
+  <p class="note">※ 写真は各宿の実写真（箱根・富士・山中湖・THE TIME FUJI）。料金は1名あたりの目安。全4施設ペット可（小型犬中心）。空室カレンダーはデモ表示です。地図 © OpenStreetMap / CARTO。</p>
   <footer>
     <div class="logo">mysa</div><div class="tagm">心地よい時間を、森で。</div>
     <div class="nav en"><a href="#stays">Stays</a><a href="#compare">Compare</a><a href="#map">Map</a><a href="#day">A Day</a></div>
@@ -281,10 +281,10 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var
     f_terr:f(2),f_living:f(9),f_sauna:f(21),f_fire:f(43),f_ext:f(6),f_ext2:f(1)};
   function im(src){return '<img loading="lazy" alt="" src="'+src+'" onerror="this.onerror=null;this.src=\''+FB+'\'">';}
   var stays=[
-    {brand:'mysa',name:'hakone',en:'Hakone',pref:'神奈川県 箱根・彫刻の森',access:'彫刻の森駅 徒歩8分',area:'箱根',tag:'森のテントサウナと貸別荘',ll:[35.2447,139.0487],price:'¥8,900〜',cap:'1〜9名',capN:9,sauna:'テントサウナ',bath:'焚き火・4Kシアター',pet:1,lake:0,book:'https://beds24.com/book-mysahakone',detail:'/hakone/',gal:[I.extDusk,I.ext,I.living,I.deck],tags:['テントサウナ','焚き火','4Kシアター','ペットOK','クラフトビール']},
-    {brand:'mysa',name:'yamanakako',en:'Yamanakako',pref:'山梨県 山中湖村・平野',access:'山中湖畔エリア',area:'山中湖',tag:'プライベートサウナのリトリート',ll:[35.420,138.904],price:'¥9,600〜',cap:'1〜9名',capN:9,sauna:'プライベートサウナ',bath:'レイクビュー・焚き火',pet:1,lake:1,book:'https://hotel-mysa.com/',detail:'/yamanakako/',gal:[I.living2,I.rattan,I.kitchen,I.forest],tags:['プライベートサウナ','レイクビュー','シアター','焚き火','ペットOK']},
-    {brand:'the time',name:'fuji',en:'The Time Fuji',pref:'山梨県 富士河口湖町・河口湖畔',access:'河口湖エリア（湖畔を一望）',area:'河口湖',tag:'新しい日本の美と本格サウナ',ll:[35.513,138.755],price:'¥8,800〜',cap:'1〜9名',capN:9,sauna:'プライベートサウナ',bath:'Harviaサウナ・レイクビュー',pet:1,lake:1,book:'https://hotel-mysa-fuji.com/',gal:['/assets/ttf/ttf-exterior-dusk.jpg','/assets/ttf/ttf-living-view.jpg','/assets/ttf/ttf-sauna-cabin.jpg','/assets/ttf/ttf-bbq.jpg'],detail:'/the-time-fuji/',tags:['本格サウナ(Harvia)','レイクビュー','水風呂','ペットOK']},
-    {brand:'mysa',name:'fuji',en:'Fuji',pref:'山梨県 富士河口湖町・長浜',access:'河口湖駅 車15分',area:'河口湖',tag:'森の一棟貸し、焚き火と4Kシアター',ll:[35.514,138.726],price:'¥9,400〜',cap:'1〜10名',capN:10,sauna:'テントサウナ',bath:'4Kシアター・焚き火',pet:1,lake:1,book:'https://hotel-mysa-fuji.com/',detail:'/fuji/',gal:[I.f_ext,I.f_ext2,f(40),I.f_living],tags:['テントサウナ','4Kシアター','焚き火','BBQ','ペットOK']}
+    {brand:'mysa',name:'hakone',en:'Hakone',pref:'神奈川県 箱根・彫刻の森',access:'彫刻の森駅 徒歩8分',area:'箱根',tag:'森のテントサウナと貸別荘',ll:[35.2447,139.0487],price:'¥8,900〜',cap:'1〜12名',capN:12,sauna:'テントサウナ',bath:'焚き火・シアター',pet:1,lake:0,book:'https://beds24.com/book-mysahakone',detail:'/hakone/',gal:[I.extDusk,I.ext,I.living,I.deck],tags:['テントサウナ','焚き火','4Kシアター','ペットOK','クラフトビール']},
+    {brand:'mysa',name:'yamanakako',en:'Yamanakako',pref:'山梨県 山中湖村・平野',access:'山中湖畔エリア',area:'山中湖',tag:'プライベートサウナのリトリート',ll:[35.420,138.904],price:'¥9,600〜',cap:'1〜9名',capN:9,sauna:'プライベートサウナ',bath:'レイクビュー・焚き火',pet:1,lake:1,book:'https://hotel-mysa.com/',detail:'/yamanakako/',gal:['/assets/yama/yama-08.jpg','/assets/yama/yama-01.jpg','/assets/yama/yama-07.jpg','/assets/yama/yama-03.jpg'],tags:['プライベートサウナ','レイクビュー','シアター','焚き火','ペットOK']},
+    {brand:'the time',name:'fuji',en:'The Time Fuji',pref:'山梨県 富士河口湖町・河口湖畔',access:'河口湖エリア（湖畔を一望）',area:'河口湖',tag:'新しい日本の美と本格サウナ',ll:[35.513,138.755],price:'¥8,800〜',cap:'1〜9名',capN:9,sauna:'Harvia式サウナ',bath:'Harviaサウナ・レイクビュー',pet:1,lake:1,book:'https://hotel-mysa-fuji.com/',gal:['/assets/ttf/ttf-exterior-dusk.jpg','/assets/ttf/ttf-living-view.jpg','/assets/ttf/ttf-sauna-cabin.jpg','/assets/ttf/ttf-bbq.jpg'],detail:'/the-time-fuji/',tags:['本格サウナ(Harvia)','レイクビュー','水風呂','ペットOK']},
+    {brand:'mysa',name:'fuji',en:'Fuji',pref:'山梨県 富士河口湖町・長浜',access:'河口湖駅 車15分',area:'河口湖',tag:'森の一棟貸し、焚き火と4Kシアター',ll:[35.514,138.726],price:'¥9,400〜',cap:'1〜10名',capN:10,sauna:'サウナ室',bath:'4Kシアター・焚き火',pet:1,lake:1,book:'https://hotel-mysa-fuji.com/',detail:'/fuji/',gal:[I.f_ext,I.f_ext2,f(40),I.f_living],tags:['テントサウナ','4Kシアター','焚き火','BBQ','ペットOK']}
   ];
   function full(p){return p.brand+' '+p.name;}
 
@@ -309,7 +309,7 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var
   document.getElementById('maplegend').innerHTML=stays.map(function(p){return '<span>'+full(p)+'</span>';}).join('');
 
   // HERO スライドショー (各宿の画像を2秒ごとにクロスフェード)
-  var heroImgs=[I.extDusk,'/assets/ttf/ttf-exterior-dusk.jpg',f(40),I.forest,f(6),'/assets/ttf/ttf-view.jpg'];
+  var heroImgs=[I.extDusk,'/assets/ttf/ttf-exterior-dusk.jpg','/assets/yama/yama-08.jpg',f(40),f(6),'/assets/ttf/ttf-view.jpg'];
   var heroBg=document.getElementById('heroBg');
   heroImgs.forEach(function(src,i){var el=document.createElement('img');el.alt='';el.loading=i?'lazy':'eager';el.src=src;el.onerror=function(){this.onerror=null;this.src=FB;};if(i===0)el.className='on';heroBg.appendChild(el);});
   (function(){var hs=heroBg.children,hi=0;if(hs.length<2)return;setInterval(function(){hs[hi].classList.remove('on');hi=(hi+1)%hs.length;hs[hi].classList.add('on');},2000);})();
@@ -336,7 +336,7 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var
 
   /* COMPARE — フィルターチップ + アイコン化セル */
   function capN(p){return p.capN||parseInt(p.cap,10)||0;}
-  function isTent(p){return p.sauna.indexOf('プライベート')<0;}
+  function isTent(p){return p.sauna.indexOf('テント')>=0;}
   var filters=[
     {k:'pet',label:'🐾 ペットOK',test:function(p){return !!p.pet;}},
     {k:'lake',label:'🏞 レイクビュー',test:function(p){return !!p.lake;}},
