@@ -30,7 +30,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--jp);color:var(--ink);background:var(--dark);font-weight:400;line-height:1.85;overflow-x:hidden;letter-spacing:.01em}
 img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
 .en{font-family:var(--sans)}
-.hero .tag,h2.big,.shead .jp,.cta .big,.amh,.lc b,.fc b,.sptv h4{text-wrap:balance;word-break:auto-phrase}
+.hero .tag,h2.big,.shead .jp,.cta .big,.amh,.lc b,.fc b,.sptv h4,.expitem h3{text-wrap:balance;word-break:auto-phrase}
 p,.lead,.note,.addr,.lc p,.faq .ans,.sptv p{text-wrap:pretty}
 #hd{position:fixed;top:0;left:0;width:100%;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:15px 20px;transition:.4s;color:var(--cream)}
 #hd.solid{background:var(--bg);color:var(--ink);box-shadow:0 1px 0 var(--line)}
@@ -63,6 +63,11 @@ h2.big{font-family:var(--jp);font-size:24px;line-height:1.6;font-weight:500;marg
 .fc b{display:block;font-family:var(--jp);font-weight:500;font-size:14.5px;line-height:1.4}
 .fc .en{font-family:var(--sans);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);font-weight:700;margin:3px 0 6px}
 .fc span{font-family:var(--jp);font-size:12px;color:var(--ink2);line-height:1.6}
+.exp{display:flex;flex-direction:column;gap:34px}
+.expitem .ph{border-radius:16px;overflow:hidden;aspect-ratio:3/2;background:#d8d7c4;box-shadow:0 18px 40px -30px rgba(33,34,39,.5)}.expitem .ph img{width:100%;height:100%;object-fit:cover}
+.expitem .no{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--green);margin:16px 0 6px}
+.expitem h3{font-family:var(--jp);font-size:19px;font-weight:500;margin-bottom:8px}
+.expitem p{font-size:13.5px;color:var(--ink2);line-height:2}
 #sauna{background:var(--dark);color:var(--cream)}
 #sauna .shead .en{color:var(--cream)}#sauna .shead .jp{color:rgba(243,236,225,.6)}
 #sauna .ph{border-radius:16px;overflow:hidden;aspect-ratio:16/10;margin:6px 0 24px;background:#221b14}#sauna .ph img{width:100%;height:100%;object-fit:cover}
@@ -128,7 +133,7 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.14em;color:var
 #bookbar a{flex:none;background:var(--dark);color:var(--cream);border-radius:15px;padding:12px 26px;font-family:var(--jp);font-weight:700;font-size:15px;text-align:center;line-height:1.15}
 #bookbar a small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.1em;opacity:.78;font-weight:700;margin-bottom:1px}
 .reveal{opacity:0;transform:translateY(20px);transition:.8s}.reveal.in{opacity:1;transform:none}
-@media(min-width:720px){.hero h1{font-size:64px}.sect{padding:80px 40px}.gitem{flex-basis:34%}.facil{grid-template-columns:repeat(4,1fr)}.specgrid{grid-template-columns:repeat(3,1fr)}.amenlist{grid-template-columns:1fr 1fr;gap:0 32px}#leisure .leisure{grid-template-columns:repeat(3,1fr)}.spt{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:720px){.hero h1{font-size:64px}.sect{padding:80px 40px}.gitem{flex-basis:34%}.facil{grid-template-columns:repeat(4,1fr)}.exp{display:grid;grid-template-columns:1fr 1fr;gap:40px 34px}.expitem .ph{aspect-ratio:4/3}.specgrid{grid-template-columns:repeat(3,1fr)}.amenlist{grid-template-columns:1fr 1fr;gap:0 32px}#leisure .leisure{grid-template-columns:repeat(3,1fr)}.spt{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 <body>
@@ -153,8 +158,8 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.14em;color:var
   </section>
 
   <section class="sect wide reveal">
-    <div class="shead"><div class="en">Facilities</div><div class="jp">主要設備 ─ 敷地668㎡・最大12名で貸切。</div></div>
-    <div class="facil" id="facil"></div>
+    <div class="shead"><div class="en">Facilities</div><div class="jp">設備・空間 ─ 敷地668㎡・最大12名で貸切。</div></div>
+    <div class="exp" id="facil"></div>
   </section>
 
   <section id="sauna" class="sect reveal"><div class="wide">
@@ -239,18 +244,17 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.14em;color:var
   var strip=document.getElementById('gstrip'),gnow=document.getElementById('gnow');
   strip.addEventListener('scroll',function(){var it=strip.children;var c=strip.scrollLeft+strip.clientWidth/2;var idx=0;for(var i=0;i<it.length;i++){if(it[i].offsetLeft<=c)idx=i;}gnow.textContent=(idx+1<10?'0':'')+(idx+1);},{passive:true});
 
-  // Facilities (8)
+  // Facilities (Experiences 形式・大きな画像＋説明)
   var facil=[
-    ['sofa','大きなリビング','Living Room','特注テーブル・最大10名着席'],
-    ['sauna','テントサウナ MORZH MAX','Tent Sauna','セルフロウリュ可・森の外気浴'],
-    ['grill','ウッドデッキ 56㎡','Wood Deck','リビング直結・BBQ／焚き火可'],
-    ['bed','寝室 3室','Bedrooms','133㎡・最大12名・茶室含む'],
-    ['washer','ストックルーム','Stock Room','洗濯機・リモートワーク机・ボードゲーム'],
-    ['paw','ペット同伴可','Pet Friendly','10kgまで小型犬2匹'],
-    ['kitchen','フルキッチン','Full Kitchen','調理器具・食器・冷蔵庫'],
-    ['car','敷地内駐車場','Parking','2台（縦列・無料）']
+    ['最高峰のテントサウナ','Tent Sauna','最大サイズのテントサウナ MORZH MAX を導入。森に囲まれた外気スペースで、自分のペースでセルフロウリュ。本格的な熱量と空間で、都会では味わえない本物の整いを。','2022/10/A20220717-67-scaled.jpg'],
+    ['大きなリビング','Living Room','元々あった3つの部屋をひとつにした大きなリビング。2台のエアコンと床暖房で年中快適。特注テーブルは最大10名が着席でき、みんなで食卓を囲めます。','2022/10/B20220717-16-scaled.jpg'],
+    ['56㎡のウッドデッキ & BBQ','Wood Deck & BBQ','リビング直結の56㎡ウッドデッキ。焚き火を囲み、BBQを楽しむ。屋内外を一体に使える、開放的なアウトドアリビングです。','2022/10/s_myh_42.jpg'],
+    ['寝室3室・最大12名','Bedrooms','133㎡の広々とした空間。2階の寝室や茶室を含む3室で、プライベートを確保しながらお休みいただけます。最大12名までご宿泊可能。','2022/10/s_myh_59-1.jpg'],
+    ['フルキッチン','Full Kitchen','調理器具・食器・冷蔵庫を備えたフルキッチン。食材を持ち込んで、貸切空間で気兼ねなく料理を楽しめます。','2022/10/B20220717-12-scaled.jpg'],
+    ['ストックルーム','Stock Room','洗濯機、リモートワーク用の机、ボードゲームを用意。お着替えのスペースとしてもご利用いただける、機能的な収納スペースです。','2022/10/s_myh_18-1.jpg'],
+    ['ペットフレンドリー','Pet Friendly','段差が少なく、ペットゲージや外の洗い場も完備。愛犬と一緒に、気兼ねなく森の時間を過ごせます。※10kgまでの小型犬2匹まで。','2022/10/A20220717-76-scaled.jpg']
   ];
-  document.getElementById('facil').innerHTML=facil.map(function(f){return '<div class="fc"><i>'+ic(f[0])+'</i><b>'+f[1]+'</b><div class="en">'+f[2]+'</div><span>'+f[3]+'</span></div>';}).join('');
+  document.getElementById('facil').innerHTML=facil.map(function(f,i){return '<div class="expitem"><div class="ph">'+im(HM+f[3],f[0])+'</div><div class="no en">0'+(i+1)+' ・ '+f[1]+'</div><h3>'+f[0]+'</h3><p>'+f[2]+'</p></div>';}).join('');
 
   // Sauna points
   var spt=[['Tent Sauna','MORZH MAX','最大サイズのテントサウナを導入。本格的な熱量と空間で本物の体験を。'],['Self Löyly','セルフロウリュ','ストーンに水をかけて自由にロウリュ。森の香りと共に。'],['Forest Air','森の外気浴','敷地内の森に囲まれた外気スペースで、四季の香りを纏う深いリラックス。'],['Private Day','1日1組限定','他のお客様と顔を合わせない、完全プライベートな滞在。']];
@@ -266,7 +270,7 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.14em;color:var
     ['GORAブリュワリー','Gora Brewery &amp; Grill','車5分','クラフトビール醸造所を併設した箱根・強羅のブリュワリーレストラン。','https://itoh-dining.co.jp/gorabrewery/common/img/img206th3749_1.jpeg','https://itoh-dining.co.jp/gorabrewery/'],
     ['天山湯治郷','Tenzan Tojikyo Onsen','車20分','自然に囲まれたロケーションで、泉質の良いお風呂に入ることができる名湯。','https://tenzan.jp/wp-content/uploads/2024/02/DSC_7121_1200.jpg','https://tenzan.jp/']
   ];
-  document.getElementById('leisureList').innerHTML=leisure.map(function(l){return '<a class="lc" href="'+l[6]+'" target="_blank" rel="noopener"><span class="ph"><img loading="lazy" alt="'+l[0]+'" src="'+l[4]+'" onerror="this.closest(\'.ph\').style.display=\'none\'"></span><span class="body"><b>'+l[0]+'</b><span class="en">'+l[1]+'</span><span class="dist">'+l[2]+'</span><p>'+l[3]+'</p></span></a>';}).join('');
+  document.getElementById('leisureList').innerHTML=leisure.map(function(l){return '<a class="lc" href="'+l[6]+'" target="_blank" rel="noopener"><div class="ph"><img loading="lazy" alt="'+l[0]+'" src="'+l[4]+'" onerror="this.parentNode.style.background=\'#d8d7c4\';this.style.display=\'none\'"></div><div class="body"><b>'+l[0]+'</b><div class="en">'+l[1]+'</div><div class="dist">'+l[2]+'</div><p>'+l[3]+'</p></div></a>';}).join('');
 
   // FAQ
   var faq=[
