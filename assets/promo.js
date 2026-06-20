@@ -10,8 +10,9 @@
    + '#promoOv.on .promoCard{transform:none}'
    + '.promoX{position:absolute;top:10px;right:12px;width:34px;height:34px;font-size:23px;color:#5b5c50;background:none;border:none;cursor:pointer;line-height:1}'
    + ".promoEy{font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#2f3d31;font-weight:700}"
-   + ".promoBig{font-family:'Manrope',sans-serif;font-weight:800;font-size:60px;line-height:1;letter-spacing:-.02em;margin:12px 0 4px;color:#14100c}"
-   + '.promoBig span{font-size:32px;font-weight:700;vertical-align:super;margin-left:2px}'
+   + ".promoBig{display:flex;align-items:baseline;justify-content:center;gap:9px;margin:14px 0 6px}"
+   + ".promoBig .pct{font-family:'Zen Kaku Gothic New','Manrope',sans-serif;font-weight:700;font-size:54px;line-height:1;letter-spacing:.01em;color:#14100c}"
+   + ".promoBig .off{font-family:'Zen Kaku Gothic New','Manrope',sans-serif;font-weight:700;font-size:26px;letter-spacing:.12em;color:#14100c}"
    + '.promoTxt{font-size:13.5px;color:#5b5c50;line-height:1.85;margin:6px 0 22px}'
    + ".promoBtn{display:block;background:#14100c;color:#f3ece1;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:15px;padding:15px;border-radius:13px;text-decoration:none}"
    + ".promoClose{display:block;width:100%;margin-top:12px;background:none;border:none;color:#5b5c50;font-family:'Zen Kaku Gothic New',sans-serif;font-size:12.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}";
@@ -22,7 +23,7 @@
       '<div class="promoCard" role="dialog" aria-label="10%OFFのご案内">'
     +   '<button class="promoX" aria-label="閉じる">×</button>'
     +   '<div class="promoEy">Welcome ・ 公式サイト限定</div>'
-    +   '<div class="promoBig">10<span>% OFF</span></div>'
+    +   '<div class="promoBig"><span class="pct">10%</span><span class="off">OFF</span></div>'
     +   '<div class="promoTxt">このサイト経由のご予約が、一番お得。<br>mysa 全宿でご利用いただけます。</div>'
     +   '<a class="promoBtn" href="' + (BOOK || '#stays') + '"' + (BOOK ? ' target="_blank" rel="noopener"' : '') + '>' + (BOOK ? 'この宿を予約する' : '宿を見る') + '</a>'
     +   '<button class="promoClose">あとで見る</button>'

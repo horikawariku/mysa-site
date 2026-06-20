@@ -108,7 +108,7 @@ body.menu-open #menu{opacity:1;visibility:visible}
 .card .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
 .card .tags span{font-family:var(--sans);font-size:11px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--ink2);font-weight:500}
 .card .meta2{display:flex;align-items:baseline;justify-content:space-between;margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
-.card .price b{font-family:var(--sans);font-size:17px;font-weight:700}.card .price span{font-size:11px;color:var(--ink2)}.card .price.sold b{color:var(--ink2)}
+.card .price b{font-family:var(--jp);font-size:17px;font-weight:700}.card .price span{font-size:11px;color:var(--ink2)}.card .price.sold b{color:var(--ink2)}
 .card .arrow{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;gap:7px;font-weight:600}
 .card .avl{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.04em;margin-top:10px;padding:6px 10px;border-radius:8px;display:none}
 .card .avl.ok{display:block;background:rgba(47,61,49,.1);color:var(--green)}
@@ -116,22 +116,31 @@ body.menu-open #menu{opacity:1;visibility:visible}
 
 #compare{padding:58px 0}#compare .sect-head{padding:0 22px}
 #compare .hint{padding:0 22px 12px;font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var(--ink2);text-transform:uppercase;font-weight:600}
-.cmpwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:0 22px 6px}.cmpwrap::-webkit-scrollbar{height:0}
-.cmp{border-collapse:separate;border-spacing:0;min-width:600px;width:100%;font-size:13px}
-.cmp th,.cmp td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-.cmp .attr{position:sticky;left:0;background:var(--bg);font-family:var(--sans);font-size:11px;letter-spacing:.06em;color:var(--ink2);text-transform:uppercase;font-weight:600;white-space:nowrap;z-index:1}
-.cmp thead .sname{font-family:var(--jp);font-weight:500;font-size:15px;min-width:130px}
-.cmp thead .sname small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.06em;color:var(--ink2);text-transform:uppercase;font-weight:600;margin-top:2px}
-.cmp .price{font-family:var(--sans);font-weight:700;font-size:15px}
-.cmp .yes{color:var(--green);font-weight:700;font-size:17px}.cmp .no{color:#bb5b46;opacity:.6;font-weight:700;font-size:17px}
-#compare .chips{display:flex;gap:8px;overflow-x:auto;padding:0 22px 14px}#compare .chips::-webkit-scrollbar{height:0}
-.chip{flex:none;font-family:var(--jp);font-size:13px;font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);background:rgba(255,255,255,.35);white-space:nowrap;transition:.2s}
+#compare .chips{display:flex;gap:8px;overflow-x:auto;padding:0 22px 18px}#compare .chips::-webkit-scrollbar{height:0}
+.chip{flex:none;font-family:var(--jp);font-size:13px;font-weight:500;padding:8px 15px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);background:transparent;white-space:nowrap;transition:.2s}
 .chip:active{transform:scale(.96)}
-.chip.on{background:var(--green);color:var(--cream);border-color:var(--green)}
-.cmp td.dim,.cmp th.sname.dim{opacity:.26;transition:opacity .3s}
-.cmp td .pbar{height:6px;border-radius:3px;background:rgba(33,34,39,.1);margin-bottom:6px;overflow:hidden;max-width:120px}
-.cmp td .pbar i{display:block;height:100%;background:var(--gold);border-radius:3px}
-.cmp td .pb{font-family:var(--sans);font-weight:700;font-size:14px}
+.chip.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.cmpwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:0 22px 6px}.cmpwrap::-webkit-scrollbar{height:0}
+.cmp{border-collapse:separate;border-spacing:0;min-width:660px;width:100%}
+.cmp th,.cmp td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+.cmp .attr{position:sticky;left:0;background:var(--bg);font-family:var(--jp);font-size:12px;color:var(--ink2);font-weight:500;white-space:nowrap;z-index:2;width:92px}
+.cmp tbody tr:nth-child(odd) td{background:rgba(255,255,255,.30)}
+.cmp tbody tr:nth-child(odd) td.attr{background:#e4e3d0}
+.cmp thead th{border-bottom:2px solid var(--ink);padding-bottom:16px;vertical-align:bottom}
+.cmp .sname{min-width:150px}
+.cmp .sname .sthumb{display:block;width:100%;aspect-ratio:3/2;border-radius:11px;overflow:hidden;background:#d8d7c4;margin-bottom:10px}
+.cmp .sname .sthumb img{width:100%;height:100%;object-fit:cover}
+.cmp .sname b{display:block;font-family:var(--jp);font-weight:500;font-size:15px;line-height:1.3}
+.cmp .sname small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.1em;color:var(--ink2);text-transform:uppercase;font-weight:600;margin-top:3px}
+.cmp .cellv{font-family:var(--jp);font-size:13.5px;color:var(--ink)}.cmp .cellv.sub{font-size:12px;color:var(--ink2)}
+.cmp .ck{width:18px;height:18px;color:var(--green);display:block}
+.cmp .dash{color:var(--ink2);opacity:.5;font-size:16px}
+.cmp .pbar{height:5px;border-radius:3px;background:rgba(33,34,39,.12);margin-bottom:7px;overflow:hidden;max-width:118px}
+.cmp .pbar i{display:block;height:100%;background:var(--ink);border-radius:3px}
+.cmp .pb{font-family:var(--jp);font-weight:700;font-size:16px;letter-spacing:.01em}.cmp .pb small{font-family:var(--jp);font-weight:500;font-size:10px;color:var(--ink2)}
+.cmp .dlink{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:3px}
+.cmp td.dim,.cmp th.sname.dim{opacity:.24;transition:opacity .3s}
+.cmp tr.detailrow td{border-bottom:none;padding-top:18px}
 
 #gallery{padding:58px 0}#gallery .sect-head{padding:0 22px}
 .gtop{display:flex;align-items:flex-end;justify-content:space-between;padding:0 22px;margin-bottom:16px}
@@ -334,39 +343,43 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var
   }
   renderCards();
 
-  /* COMPARE — フィルターチップ + アイコン化セル */
+  /* COMPARE — 絞り込みチップ + 宿サムネ比較表 */
   function capN(p){return p.capN||parseInt(p.cap,10)||0;}
   function isTent(p){return p.sauna.indexOf('テント')>=0;}
   var filters=[
-    {k:'pet',label:'🐾 ペットOK',test:function(p){return !!p.pet;}},
-    {k:'lake',label:'🏞 レイクビュー',test:function(p){return !!p.lake;}},
-    {k:'big',label:'👥 大人数 10名',test:function(p){return capN(p)>=10;}},
-    {k:'tent',label:'🔥 テントサウナ',test:function(p){return isTent(p);}},
-    {k:'priv',label:'✨ プライベートサウナ',test:function(p){return !isTent(p);}}
+    {k:'pet',label:'ペットOK',test:function(p){return !!p.pet;}},
+    {k:'lake',label:'レイクビュー',test:function(p){return !!p.lake;}},
+    {k:'big',label:'大人数（10名〜）',test:function(p){return capN(p)>=10;}},
+    {k:'tent',label:'テントサウナ',test:function(p){return isTent(p);}},
+    {k:'priv',label:'プライベートサウナ',test:function(p){return !isTent(p);}}
   ];
   var active={};
   function anyActive(){return filters.some(function(f){return active[f.k];});}
   function matches(p){return filters.every(function(f){return !active[f.k]||f.test(p);});}
-  function yn(b){return b?'<span class="yes">○</span>':'<span class="no">×</span>';}
+  function yn(b){return b?'<svg class="ck" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5l3.3 3.3L14.5 5"/></svg>':'<span class="dash">—</span>';}
   var prices=stays.map(function(p){return parseInt(p.price.replace(/[^0-9]/g,''),10);});
   var minP=Math.min.apply(null,prices), maxP=Math.max.apply(null,prices);
-  function priceBar(p){var v=parseInt(p.price.replace(/[^0-9]/g,''),10);var pct=35+(maxP===minP?0:(v-minP)/(maxP-minP)*65);return '<div class="pbar"><i style="width:'+pct.toFixed(0)+'%"></i></div><span class="pb">'+p.price+'</span>';}
+  function priceBar(p){var v=parseInt(p.price.replace(/[^0-9]/g,''),10);var pct=35+(maxP===minP?0:(v-minP)/(maxP-minP)*65);return '<div class="pbar"><i style="width:'+pct.toFixed(0)+'%"></i></div><span class="pb">'+p.price+'<small> /人〜</small></span>';}
+  function cv(t,sub){return '<span class="cellv'+(sub?' sub':'')+'">'+t+'</span>';}
   var crows=[
-    ['📍 エリア',function(p){return p.area;}],
-    ['👥 定員',function(p){return p.cap;}],
-    ['📶 最寄り',function(p){return '<span style="font-size:12px">'+p.access+'</span>';}],
-    ['🔥 サウナ',function(p){return p.sauna;}],
-    ['🏞 レイクビュー',function(p){return yn(p.lake);}],
-    ['🐾 ペット',function(p){return yn(p.pet);}],
-    ['¥ 料金 /人〜',function(p){return priceBar(p);}]
+    ['エリア',function(p){return cv(p.area);}],
+    ['最寄り',function(p){return cv(p.access,1);}],
+    ['定員',function(p){return cv(p.cap);}],
+    ['サウナ',function(p){return cv(p.sauna);}],
+    ['レイクビュー',function(p){return yn(p.lake);}],
+    ['ペット可',function(p){return yn(p.pet);}],
+    ['料金',function(p){return priceBar(p);}]
   ];
   function dimCls(p){return anyActive()&&!matches(p)?' dim':'';}
   function renderChips(){
     document.getElementById('cmpChips').innerHTML='<button class="chip'+(anyActive()?'':' on')+'" data-k="_all">すべて</button>'+filters.map(function(f){return '<button class="chip'+(active[f.k]?' on':'')+'" data-k="'+f.k+'">'+f.label+'</button>';}).join('');
   }
+  function thumb(p){return '<span class="sthumb"><img loading="lazy" alt="" src="'+p.gal[0]+'" onerror="this.onerror=null;this.src=\''+FB+'\'"></span>';}
   function renderCmp(){
-    var head='<thead><tr><th class="attr"></th>'+stays.map(function(p){return '<th class="sname'+dimCls(p)+'">'+full(p)+'<small>'+p.area+'</small></th>';}).join('')+'</tr></thead>';
-    document.getElementById('cmp').innerHTML=head+'<tbody>'+crows.map(function(r){return '<tr><td class="attr">'+r[0]+'</td>'+stays.map(function(p){return '<td class="'+( dimCls(p).trim() )+'">'+r[1](p)+'</td>';}).join('')+'</tr>';}).join('')+'</tbody>';
+    var head='<thead><tr><th class="attr"></th>'+stays.map(function(p){return '<th class="sname'+dimCls(p)+'">'+thumb(p)+'<b>'+full(p)+'</b><small>'+p.area+'</small></th>';}).join('')+'</tr></thead>';
+    var body=crows.map(function(r){return '<tr><td class="attr">'+r[0]+'</td>'+stays.map(function(p){return '<td class="'+dimCls(p).trim()+'">'+r[1](p)+'</td>';}).join('')+'</tr>';}).join('');
+    var drow='<tr class="detailrow"><td class="attr"></td>'+stays.map(function(p){return '<td class="'+dimCls(p).trim()+'">'+(p.detail?'<a class="dlink" href="'+p.detail+'">詳しく見る</a>':'')+'</td>';}).join('')+'</tr>';
+    document.getElementById('cmp').innerHTML=head+'<tbody>'+body+drow+'</tbody>';
   }
   document.getElementById('cmpChips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;var k=b.getAttribute('data-k');if(k==='_all'){active={};}else{active[k]=!active[k];}renderChips();renderCmp();});
   renderChips();renderCmp();
