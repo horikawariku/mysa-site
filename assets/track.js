@@ -13,18 +13,65 @@
     if (fb) localStorage.setItem("mysa_fbclid", fb);
   } catch (e) {}
 
+  // 1b) 訪問者ID: page_views と 予約クリック(click_logs) を同一人物として繋ぐ。
+  //     100villa から ?rt_vid= 付きで来た場合はそのIDを引き継ぐ（クロスサイトで同一訪問者に）。
+  var VID = null;
+  try {
+    var vq = new URLSearchParams(location.search);
+    var rv = vq.get("rt_vid");
+    if (rv && /^[0-9a-f-]{16,64}$/i.test(rv)) localStorage.setItem("mysa_vid", rv);
+    VID = localStorage.getItem("mysa_vid");
+    if (!VID) {
+      VID = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+        var r = (Math.random() * 16) | 0;
+        return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+      });
+      localStorage.setItem("mysa_vid", VID);
+    }
+  } catch (e) {}
+
+  // 1c) page_view 送信（100villaのビーコンと同じテーブルへ。
+  //     これが無いと「到達(landed)」集計で mysa 系だけ実態より過小になる）
+  try {
+    var pvBody = JSON.stringify({
+      visitor_id: VID,
+      property_id: window.MYSA_PROP || null,
+      page_type: location.pathname === "/" ? "site_top" : "site_page",
+      page_url: location.href,
+      referrer: document.referrer || null
+    });
+    var pvUrl = "https://redirect-tracker-eta.vercel.app/api/page-view";
+    // 重要: application/json のBlobを渡すとクロスオリジンではCORSプリフライトが必要になり、
+    // ビーコンはプリフライト不可のためブラウザが送信自体をブロックする (IG系の閲覧が全滅していた原因)。
+    // 文字列(=text/plain扱い)ならプリフライト不要でそのまま届く。サーバ側のJSONパースはContent-Type非依存。
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(pvUrl, pvBody);
+    } else {
+      fetch(pvUrl, { method: "POST", body: pvBody, keepalive: true, mode: "no-cors" });
+    }
+  } catch (e) {}
+
   var prop = window.MYSA_PROP;
   if (!prop) return; // 予約リンクの無いページ（UTM保存のみで終了）
 
   function src() { try { return localStorage.getItem("mysa_src") || "direct"; } catch (e) { return "direct"; } }
   function fbc() { try { return localStorage.getItem("mysa_fbclid") || ""; } catch (e) { return ""; } }
 
+  // トップで選んだ日付（?checkin&checkout）を Beds24 まで引き継ぐ
+  function dates() {
+    try {
+      var q = new URLSearchParams(location.search);
+      var ci = q.get("checkin"), co = q.get("checkout");
+      return (ci && co) ? ("&checkin=" + encodeURIComponent(ci) + "&checkout=" + encodeURIComponent(co)) : "";
+    } catch (e) { return ""; }
+  }
   function redirectUrl() {
     var u = RT + "?p=" + encodeURIComponent(prop) +
             "&s=" + encodeURIComponent(src()) +
-            "&c=" + encodeURIComponent(prop) + "&m=cpc";
+            "&c=" + encodeURIComponent(prop) + "&m=cpc" + dates();
     var f = fbc();
     if (f) u += "&fbclid=" + encodeURIComponent(f);
+    if (VID) u += "&v=" + encodeURIComponent(VID); // クリックを page_views と同一訪問者に紐付け
     return u;
   }
 
