@@ -24,7 +24,7 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://mysa-site.100villa.workers.dev/#org","name":"mysa","description":"富士・箱根の貸切サウナ宿ブランド","url":"https://mysa-site.100villa.workers.dev/","logo":"https://hotel-mysa.com/wp-content/uploads/2022/10/A20220717-76-scaled.jpg"},
 {"@type":"WebSite","@id":"https://mysa-site.100villa.workers.dev/#web","url":"https://mysa-site.100villa.workers.dev/","name":"mysa","publisher":{"@id":"https://mysa-site.100villa.workers.dev/#org"},"inLanguage":"ja"},
-{"@type":"LodgingBusiness","name":"mysa hakone","description":"箱根・彫刻の森エリアの森にある1日1組の貸別荘。屋外サウナ・焚き火・4Kシアター。敷地668㎡。","image":"https://hotel-mysa.com/wp-content/uploads/2022/10/A20220717-92-scaled.jpg","priceRange":"¥¥¥","numberOfRooms":"1","address":{"@type":"PostalAddress","addressRegion":"神奈川県","addressLocality":"箱根町","addressCountry":"JP"},"geo":{"@type":"GeoCoordinates","latitude":35.2447,"longitude":139.0487},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"サウナ","value":true},{"@type":"LocationFeatureSpecification","name":"ペット可","value":true}],"parentOrganization":{"@id":"https://mysa-site.100villa.workers.dev/#org"}},
+{"@type":"LodgingBusiness","name":"mysa hakone","description":"箱根・彫刻の森エリアの森にある1日1組の貸別荘。屋外サウナ・焚き火・4Kシアター。敷地668㎡。","image":"/assets/opt/hero.jpg","priceRange":"¥¥¥","numberOfRooms":"1","address":{"@type":"PostalAddress","addressRegion":"神奈川県","addressLocality":"箱根町","addressCountry":"JP"},"geo":{"@type":"GeoCoordinates","latitude":35.2447,"longitude":139.0487},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"サウナ","value":true},{"@type":"LocationFeatureSpecification","name":"ペット可","value":true}],"parentOrganization":{"@id":"https://mysa-site.100villa.workers.dev/#org"}},
 {"@type":"LodgingBusiness","name":"mysa yamanakako","description":"山中湖畔の富士ビューサウナ付き貸別荘。1日1組・124㎡。ペット可。","image":"https://hotel-mysa.com/wp-content/uploads/2022/10/B20220717-6-scaled.jpg","priceRange":"¥¥¥","numberOfRooms":"1","address":{"@type":"PostalAddress","addressRegion":"山梨県","addressLocality":"山中湖村平野","addressCountry":"JP"},"geo":{"@type":"GeoCoordinates","latitude":35.420,"longitude":138.904},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"サウナ","value":true},{"@type":"LocationFeatureSpecification","name":"富士ビュー","value":true}],"parentOrganization":{"@id":"https://mysa-site.100villa.workers.dev/#org"}},
 {"@type":"LodgingBusiness","name":"THE TIME FUJI","description":"河口湖畔を一望するプライベートヴィラ。Harvia本格サウナ・水風呂・外気浴。100㎡の一棟貸し。","image":"https://hotel-mysa-fuji.com/wp-content/uploads/2023/11/2.jpeg","priceRange":"¥¥¥","numberOfRooms":"1","address":{"@type":"PostalAddress","addressRegion":"山梨県","addressLocality":"富士河口湖町","addressCountry":"JP"},"geo":{"@type":"GeoCoordinates","latitude":35.513,"longitude":138.755},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"サウナ","value":true},{"@type":"LocationFeatureSpecification","name":"レイクビュー","value":true}],"parentOrganization":{"@id":"https://mysa-site.100villa.workers.dev/#org"}},
 {"@type":"LodgingBusiness","name":"mysa fuji","description":"富士河口湖町長浜の森にある1日1組の貸別荘。屋外サウナ・焚き火・4Kシアター。ペット可・駐車3台。","image":"https://hotel-mysa-fuji.com/wp-content/uploads/2023/11/6.jpeg","priceRange":"¥¥¥","numberOfRooms":"1","address":{"@type":"PostalAddress","addressRegion":"山梨県","addressLocality":"富士河口湖町長浜","addressCountry":"JP"},"geo":{"@type":"GeoCoordinates","latitude":35.514,"longitude":138.726},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"サウナ","value":true},{"@type":"LocationFeatureSpecification","name":"4Kシアター","value":true}],"parentOrganization":{"@id":"https://mysa-site.100villa.workers.dev/#org"}}
@@ -292,7 +292,7 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var
     kitchen:HM+'2022/10/B20220717-12-scaled.jpg',wine:HM+'2022/11/B20220717-4-scaled.jpg',breakfast:HM+'2022/10/B20220717-14-scaled.jpg',
     deck:HM+'2022/10/s_myh_47-1.jpg',bed:HM+'2022/10/s_myh_59-1.jpg',tent:HM+'2022/10/A20220717-67-scaled.jpg',loyly:HM+'2022/10/A20220717-78-scaled.jpg',
     fire:HM+'2022/10/A20220717-98-scaled.jpg',theater:HM+'2022/10/B20220717-5-scaled.jpg',
-    f_terr:f(2),f_living:f(9),f_sauna:f(21),f_fire:f(43),f_ext:f(6),f_ext2:f(1)};
+    f_terr:'/assets/opt/fj-2.jpg',f_living:f(9),f_sauna:'/assets/opt/fj-21.jpg',f_fire:'/assets/opt/fj-43.jpg',f_ext:f(6),f_ext2:'/assets/opt/fj-ext2.jpg'};
   function im(src){return '<img loading="lazy" alt="" src="'+src+'" onerror="this.onerror=null;this.src=\''+FB+'\'">';}
   var stays=[
     {brand:'mysa',name:'hakone',en:'Hakone',pref:'神奈川県 箱根・彫刻の森',access:'彫刻の森駅 徒歩8分',area:'箱根',tag:'森の屋外サウナと貸別荘',ll:[35.2447,139.0487],price:'¥8,900〜',cap:'1〜12名',capN:12,sauna:'屋外サウナ（Harvia式）',bath:'焚き火・シアター',pet:1,lake:0,book:'https://beds24.com/book-mysahakone',detail:'/hakone/',gal:['/assets/opt/hk-extdusk.jpg','/assets/opt/hk-ext.jpg','/assets/opt/hk-living.jpg','/assets/opt/hk-deck.jpg'],tags:['屋外サウナ','BBQ','焚き火','シアター','ペットOK']},
@@ -326,7 +326,7 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var
   document.getElementById('maplegend').innerHTML=stays.map(function(p){return '<span>'+full(p)+'</span>';}).join('');
 
   // HERO スライドショー (各宿の画像を2秒ごとにクロスフェード)
-  var heroImgs=[I.extDusk,'/assets/ttf/ttf-exterior-dusk.jpg','/assets/yama/yama-08.jpg',f(40),f(6),'/assets/ttf/ttf-view.jpg'];
+  var heroImgs=['/assets/opt/hero.jpg','/assets/opt/h-ttf-dusk.jpg','/assets/opt/h-yama.jpg','/assets/opt/h-fj40.jpg','/assets/opt/h-fj6.jpg','/assets/opt/h-ttf-view.jpg'];
   var heroBg=document.getElementById('heroBg');
   heroImgs.forEach(function(src,i){var el=document.createElement('img');el.alt='';el.loading=i?'lazy':'eager';el.src=src;el.onerror=function(){this.onerror=null;this.src=FB;};if(i===0)el.className='on';heroBg.appendChild(el);});
   (function(){var hs=heroBg.children,hi=0;if(hs.length<2)return;setInterval(function(){hs[hi].classList.remove('on');hi=(hi+1)%hs.length;hs[hi].classList.add('on');},2000);})();
@@ -394,13 +394,13 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var
   renderChips();renderCmp();
 
   /* A DAY (fuji photos) */
-  var day=[['15:00','チェックイン','森に到着したら、メールのパスコードで無人セルフチェックイン。鍵の受け渡しはありません。',f(1)],
-    ['15:30','サウナを暖める','Harvia式の本格電気ストーブをご用意。スイッチ一つで高温まで温まります。',f(21)],
-    ['17:00','ととのう','セルフロウリュと森の外気浴。何度でも、好きなだけ整える時間を。',f(31)],
-    ['19:00','焚き火とBBQ','リビングは外。焚き火台で調理し、火を囲んで過ごす夜のひととき。',f(43)],
-    ['21:00','シアターでくつろぐ','大開口の室内へ。4Kシアターやクラフトビールで、ゆっくりと夜を更かす。',f(20)],
-    ['07:00','朝、挽きたてのコーヒー','備え付けの豆とミルで一杯。澄んだ空気と鳥の声のなかで、旅を振り返る。',f(15)],
-    ['10:00','チェックアウト','おすすめは朝サウナ。最後にもう一度整えてから、森をあとに。',f(2)]];
+  var day=[['15:00','チェックイン','森に到着したら、メールのパスコードで無人セルフチェックイン。鍵の受け渡しはありません。','/assets/opt/fj-ext2.jpg'],
+    ['15:30','サウナを暖める','Harvia式の本格電気ストーブをご用意。スイッチ一つで高温まで温まります。','/assets/opt/fj-21.jpg'],
+    ['17:00','ととのう','セルフロウリュと森の外気浴。何度でも、好きなだけ整える時間を。','/assets/opt/fj-31.jpg'],
+    ['19:00','焚き火とBBQ','リビングは外。焚き火台で調理し、火を囲んで過ごす夜のひととき。','/assets/opt/fj-43.jpg'],
+    ['21:00','シアターでくつろぐ','大開口の室内へ。4Kシアターやクラフトビールで、ゆっくりと夜を更かす。','/assets/opt/fj-20.jpg'],
+    ['07:00','朝、挽きたてのコーヒー','備え付けの豆とミルで一杯。澄んだ空気と鳥の声のなかで、旅を振り返る。','/assets/opt/fj-15.jpg'],
+    ['10:00','チェックアウト','おすすめは朝サウナ。最後にもう一度整えてから、森をあとに。','/assets/opt/fj-2.jpg']];
   var ds=document.getElementById('daystrip');
   ds.innerHTML=day.map(function(d){return '<div class="daycard"><div class="di">'+im(d[3])+'</div><div class="dt en">'+d[0]+'</div><div class="dh">'+d[1]+'</div><div class="dd">'+d[2]+'</div></div>';}).join('');
   var dnext=document.getElementById('daynext');
