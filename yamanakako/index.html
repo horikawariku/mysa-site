@@ -180,7 +180,7 @@ var faq=[["1日何組まで？", "1日1組限定の貸切です。"], ["チェ�
 var hd=document.getElementById('hd');window.addEventListener('scroll',function(){hd.classList.toggle('solid',(window.scrollY||0)>window.innerHeight*0.7);},{passive:true});
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.05});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}else document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
 function initMap(){if(typeof L==='undefined'){setTimeout(initMap,300);return;}var ll=[35.42,138.904];var map=L.map('mini',{scrollWheelZoom:false,zoomControl:true}).setView(ll,13);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap, &copy; CARTO'}).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap, &copy; CARTO'}).addTo(map);
 L.marker(ll,{icon:L.divIcon({className:'mpin',html:'<span></span>',iconSize:[16,16],iconAnchor:[8,8]})}).addTo(map).bindTooltip('mysa yamanakako',{permanent:true,direction:'top',className:'mtip',offset:[0,-8]});
 var mo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setTimeout(function(){map.invalidateSize();},200);});});mo.observe(document.getElementById('mini'));}
 initMap();

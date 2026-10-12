@@ -297,7 +297,7 @@ footer .cp{font-family:var(--sans);font-size:10px;letter-spacing:.14em;color:var
     if(typeof L==='undefined'){setTimeout(initMap,300);return;}
     var ll=[35.2447,139.0487];
     var map=L.map('mini',{scrollWheelZoom:false,zoomControl:true}).setView(ll,13);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap, &copy; CARTO'}).addTo(map);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap, &copy; CARTO'}).addTo(map);
     L.marker(ll,{icon:L.divIcon({className:'mpin',html:'<span></span>',iconSize:[16,16],iconAnchor:[8,8]})}).addTo(map).bindTooltip('mysa hakone',{permanent:true,direction:'top',className:'mtip',offset:[0,-8]});
     var mo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setTimeout(function(){map.invalidateSize();},200);});});mo.observe(document.getElementById('mini'));
   }
